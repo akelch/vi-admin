@@ -2,14 +2,13 @@ import "./shoelaceConfig"
 
 import bone from "@viur/vue-utils/bones/edit/bone.vue" //import before App.vue
 import Wrapper_nested from "@viur/vue-utils/bones/edit/wrapper_nested.vue" //import before App.vue
-import { initApp } from "@viur/vue-components/app"
-import ActionHandler from "@viur/vue-components/handler/ActionHandler.vue"
+
 
 import { createApp } from "vue"
 import App from "./App.vue"
 
 const app = createApp(App)
-initApp(app)
+//initApp(app)
 
 import router from "./routes"
 import { createPinia } from "pinia"
@@ -27,14 +26,10 @@ app.use(pinia)
 pinia.use(piniaPluginPersistedstate)
 app.use(router)
 
-// eslint-disable-next-line vue/multi-word-component-names
 app.component("Bone", bone)
-// eslint-disable-next-line vue/multi-word-component-names
-app.component("WrapperNested", Wrapper_nested)// eslint-disable-line
-// eslint-disable-next-line vue/multi-word-component-names
-app.component("ActionHandler", ActionHandler)
+app.component("WrapperNested", Wrapper_nested)
+//app.component("ActionHandler", ActionHandler)
 
-// @ts-ignore
 import { de_translations, en_translations } from "@viur/vue-components/translations/translations"
 
 const i18n = createI18n({
